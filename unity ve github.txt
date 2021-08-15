@@ -1,1 +1,0 @@
-https://unityatscale.com/unity-version-control-guide/how-to-setup-unity-project-on-github/#step-5---what-to-commit-what-to-ignore
