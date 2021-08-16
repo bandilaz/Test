@@ -15,7 +15,7 @@ public class Movement : MonoBehaviour
     float turnSmoothVelocity;
     void Start()
     {
-        Cursor.visible = false;
+       
 
     }
 
@@ -24,6 +24,7 @@ public class Movement : MonoBehaviour
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
         float vertical = Input.GetAxisRaw("Vertical");
+       
         Vector3 direction = new Vector3(horizontal, 0f, vertical).normalized;
 
         if(direction.magnitude >= 0.1f)
@@ -35,7 +36,6 @@ public class Movement : MonoBehaviour
             Vector3 moveDirr = Quaternion.Euler(0f, targetAngle, 0f) * Vector3.forward;
             controller.Move(moveDirr.normalized * speed * Time.deltaTime);
         }
-       
        
 
     }
