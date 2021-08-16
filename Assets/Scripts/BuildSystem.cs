@@ -26,9 +26,9 @@ public class BuildSystem : MonoBehaviour
     {
         if(Physics.Raycast(CamChild.position, CamChild.forward, out Hit, 15f)) { 
         
-            FloorBuild.position = new Vector3(Mathf.RoundToInt(Hit.point.x) != 0 ? Mathf.RoundToInt(Hit.point.x/3) * 3 : 3 , 
-                (Mathf.RoundToInt(Hit.point.y) != 0 ? Mathf.RoundToInt(Hit.point.y / 3) * 3 : 0) + FloorBuild.localScale.y, 
-                Mathf.RoundToInt(Hit.point.z) != 0 ? Mathf.RoundToInt(Hit.point.z / 3) * 3 : 3);
+            FloorBuild.position = new Vector3(Mathf.RoundToInt(Hit.point.x) != 0 ? Mathf.RoundToInt(Hit.point.x/ FloorBuild.localScale.x) * FloorBuild.localScale.x : FloorBuild.localScale.x, 
+                (Mathf.RoundToInt(Hit.point.y) != 0 ? Mathf.RoundToInt(Hit.point.y / FloorBuild.localScale.y) * FloorBuild.localScale.y : 0) + FloorBuild.localScale.y, 
+                Mathf.RoundToInt(Hit.point.z) != 0 ? Mathf.RoundToInt(Hit.point.z / FloorBuild.localScale.z) * FloorBuild.localScale.z : FloorBuild.localScale.x);
         }
 
         if (Input.GetMouseButtonDown(0))
